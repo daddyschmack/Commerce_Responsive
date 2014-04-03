@@ -64,6 +64,16 @@ $impact_color: #ee0000;
   color:$color;
 
 }
+
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+
 html{
   font-size: 62.5%;
 }
@@ -387,7 +397,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
         width:4.1rem;
         height:2.4rem;
         text-align: center;
-      }
+       }
     }
     .availability{
       @include zen-grid-item(1,6);
@@ -457,29 +467,16 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   margin-bottom: 40px;
   margin: 1% auto;
   width:98%;
-  input{
-    ::-webkit-input-placeholder {
-      color: red;
-    }
-
-    :-moz-placeholder { /* Firefox 18- */
-      color: red;
-    }
-
-    ::-moz-placeholder {  /* Firefox 19+ */
-      color: red;
-    }
-
-    :-ms-input-placeholder {
-      color: red;
+  input {
+    @include input-placeholder {
+      color:#ffffff;
     }
   }
   .promo_input{
     height:3.5rem;
     width:40%;
     font-size:1.3rem;
-
-  }
+      }
 }
 
 .order_breakdown{
@@ -569,7 +566,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     width:48%;
     padding:1%;
     font-size: 1.7rem;
-    margin-right: none;
+    margin-right: 0;
   }
   .secure_checkout{
     margin-left:.5%;
@@ -732,12 +729,28 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
       }
     }
   }
+    .espot_Cart_lower{
+      margin-left: 4px;
+    }
     .promoForm{
       width:100%;
+      input {
+        @include input-placeholder {
+          color: #ccc;
+          padding-left: 3%;
+        }
+      }
       .promo_input{
         height:3.5rem;
-        width:78%;
+        width:80%;
         font-size:1.3rem;
+        float:left;
+          display: inline-block;
+          vertical-align: top;
+      }
+      .apply_button{
+        width:18%;
+        margin-right: 1%;
       }
     }
     .order_breakdown{
