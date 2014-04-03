@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Cart</title>
+    <link type="text/css" rel="stylesheet" href="stylesheets/commerce_responsive.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+<div class="page_container">
+
+
+    <div class="row espot_top mobile_hide">
+        <h2>espot top</h2><br>
+
+    </div>
+
+    <div class="cart_container"> <!-- this is a containing area -->
+       <div class="cart_controls">
+        <div class="cart_id"><span class="title_Text">Shopping Cart</span>&nbsp;<span class="cart_id_number">5468716</span></div>
+
+        <div class="cart_buttons">
+            <button class="continue_shopping gray_gradient_button">Continue Shopping</button>
+            <button class="secure_checkout red_gradient_button">Secure Checkout</button>
+        </div>
+           <div class="cust_service_phone_link">
+               <span class="title_Text">Call Customer Service</span>
+           </div>
+       </div>
+        <div class="espot_Cart_upper mobile_hide">
+            <div class="shopRunner">
+                Items in your cart may qualify for <span class="boldText">FREE 2-Day</span> shipping by ShopRunner
+                <a href="#" >Learn More</a> &nbsp; <a href="#">Sign In</a>
+            </div>
+            <div class="chatBar">
+                Talk with a Specialist Via Live Chat &nbsp; <i>&nbsp;</i>
+            </div>
+        </div>
+        <div class="cart">
+            <div class="titleRow">
+                <div class="item_descriptionHdr">Item Description </div>
+                <div class="qtyHdr">QTY</div>
+                <div class="availabilityHdr">Availability</div>
+                <div class="priceHdr">Price</div>
+                <div class="totalHdr">Total </div>
+                <div class="detailsHdr">Details</div>
+            </div>
+
+            <div class="productRow" id="product_1">
+                <div class="item_image">
+                    <img src="images/EF-8-15-Fisheye-USM_1_l.jpg" alt="Fish Eye Lens">
+                </div>
+
+               <div class="item_details">
+                   <div class="product_name">EF 8-15mm f/4L Fisheye USM</div>
+                   <div class="sku">SKU: 4427B002A</div>
+                   <div class="instant_savings onSale">$100 Instant Savings <a href="#" class="normal_link">Details</a></div>
+                   <div class="free_gift "> <a class="no_decoration_link" href="#">Add free Gift?</a></div>
+                   <div class="giftWrap"> <a href="#">Add Gift Wrap? </a></div>
+               </div>
+               <div class="qty">
+                   <label for="prod1_qty" class="mobile_inline_block">QTY: </label>
+                   <input id="prod1_qty" type="number" value="1">
+               </div>
+               <div class="availability">In Stock
+               </div>
+               <div class="price"><span class="mobile_hide">You Pay:&nbsp;</span> $1499.00
+                   <div class="old_price"><span class="mobile_hide">Was:</span> $1599.00</div>
+               </div>
+               <div class="total">$1499.00
+               </div>
+               <div class="remove">
+                   <a class="delete_control">Remove</a>
+               </div>
+
+
+               <div class="carePak">
+                   <div class="small_label"><span>Choose Your Extended Value Plan</span> <a class="viewOptionLink" href="#">ViewOptions</a></div>
+                   <div class="warrantyOption">
+                       <input type="radio" class="" id="servicePak_option1">Canon CarePAK Extended Service Plan (2 Years) ($250.00)</input>
+                   </div>
+               </div>
+
+            </div><!-- end product row 1 -->
+            <div class="productRow" id="product_2">
+                <div class="item_image">
+                    <img src="images/EF-8-15-Fisheye-USM_1_l.jpg" alt="Fish Eye Lens">
+                </div>
+
+                <div class="item_details">
+                    <div class="product_name">Canon EOS Lens Wrap</div>
+                    <div class="sku">SKU: 0042W407</div>
+
+                </div>
+                <div class="qty">
+                    <label for="prod2_qty" class="mobile_inline_block">QTY: </label>
+                    <input id="prod2_qty" type="number" value="1">
+                </div>
+                <div class="availability">In Stock
+                </div>
+                <div class="price">
+                    <div class="old_price mobile_hide">Was $5.75</div>
+                </div>
+                <div class="total">Free
+                </div>
+                <div class="remove"><a class="delete_control">&nbsp;Remove</a>
+                </div>
+
+            </div><!-- end product row2 -->
+        </div>
+        <div class="espot_Cart_lower" >
+                <div class="espot_text">
+                    $5 Dollar Flat-Rate Ground Shipping and Handling on All Orders of $100 or more.
+                    <a href="#" class="normal_link">Details</a>
+                </div>
+        </div>
+        <div class="promoForm" id="promoArea">
+            <form action="#" name="promoForm">
+                <input type="text" placeholder="Enter Promo Code" class="promo_input"/>
+                <button class="apply_button gray_gradient_button" type="submit" class="applyButton" onclick="ajax_ApplyPromoCode">Apply</button>
+
+            </form>
+        </div>
+        <div class="order_breakdown">
+            <div class="order_disclaimer">
+                <div class="mobile_hide">
+                    <p>Your order confirmation email will include shipment details, product availability and final sales tax. </p>
+                    <p>Expected delivery dates vary due to carrier shipping practices delivery location and the items you order. </p>
+                    <p>Please note Canon Online Store does not currenlty support shipments to P.O. boxes, APO, Peurto Rico, Guam, or US virgin Islands . For more information view Cannon Terms of Service. </p>
+                </div>
+                <div class="mobile_show">
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="order_total">
+                <div class="table_ordersTotal">
+                    <div class="merchandise_label">Merchandise:</div>
+                    <div class="merchandise_value">$115,504.75</div>
+                    <!-- new row-->
+                    <div class="discount_label">Discount</div>
+                    <div class="discount_value">-$5.04</div>
+                    <!-- new row-->
+                    <div class="estimated_shipping_label">Estimated Shipping</div>
+                    <div class="estimated_shipping_value">Free</div>
+                    <!-- new row -->
+                    <div class="sub_total_label">Pre-Tax Subtotal</div>
+                    <div class="sub_total_value">$115,504.75</div>
+                </div>
+            </div>
+        </div>
+        <div class="cart_buttons_lower">
+            <button class="continue_shopping gray_gradient_button">Continue Shopping</button>
+            <button class="secure_checkout red_gradient_button">Secure Checkout</button>
+
+        </div>
+
+
+
+    </div><!--end cart container -->
+    <div class="recommendedProductArea">
+        <div class="recommendedProduct">
+            <p>You may also like:</p>
+            <ul>
+                <li>
+                    <img src="images/EF-8-15-Fisheye-USM_1_l.jpg">
+                </li>
+                <li>Item Name</li>
+
+                <li>1499.99</li>
+                <li>
+                    <button class="button_add_cart red_gradient_button"><i class="fa fa-shopping-cart"></i>&nbspAdd to Cart</button>
+                </li>
+            </ul>
+        </div>
+        <div class="recommendedProduct">
+            <ul>
+                <li>
+                    <img src="images/EF-8-15-Fisheye-USM_1_l.jpg">
+                </li>
+                <li>Item Name</li>
+
+                <li>1499.99</li>
+                <li>
+                    <button class="button_add_cart red_gradient_button"><i class="fa fa-shopping-cart"></i>&nbsp;Add to Cart</button>
+                </li>
+            </ul>
+        </div>
+        <div class="recommendedProduct">
+            <ul>
+                <li>
+                    <img src="images/EF-8-15-Fisheye-USM_1_l.jpg">
+                </li>
+                <li>Item Name</li>
+
+                <li>1499.99</li>
+                <li>
+                    <button class="button_add_cart red_gradient_button"><i class="fa fa-shopping-cart"></i>&nbsp;Add to Cart</button>
+                </li>
+            </ul>
+        </div>
+        <div class="recommendedProduct">
+            <ul>
+                <li>
+                    <img src="images/EF-8-15-Fisheye-USM_1_l.jpg">
+                </li>
+                <li>Item Name</li>
+
+                <li>1499.99</li>
+                <li>
+                    <button class="button_add_cart red_gradient_button"><i class="fa fa-shopping-cart"></i>&nbsp;Add to Cart</button>
+                </li>
+            </ul>
+        </div>
+
+
+
+    </div>
+    </div>
+
+</body>
+</html>
