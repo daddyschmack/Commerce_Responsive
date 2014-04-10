@@ -26,6 +26,7 @@ $impact_color: #ee0000;
   -moz-osx-font-smoothing: grayscale;
   margin:0 .25rem;
 }
+
 /*
 @if( $pixelFalback == ""){
   font-size: $iconSize;
@@ -73,6 +74,14 @@ $impact_color: #ee0000;
   &::-webkit-input-placeholder { @content; }
 }
 
+.baseChatBar{
+  font-weight: bold;
+  text-align: right;
+  &:after{
+    @include f_awe("\f075", 1.3rem);
+  }
+}
+
 
 html{
   font-size: 62.5%;
@@ -80,10 +89,10 @@ html{
 body{
   //font-size: $base-font-size;
   font-size: 1.3rem;
-  position: relative;
+  height: 100%;
 }
 
-H1{
+H1,h1{
   font-size: 2.8rem;
 }
 
@@ -116,10 +125,30 @@ H1{
   border: none;
 }
 
+@mixin section_title($column-width:4) {
+  @include zen-clear();
+  @include zen-grid-item($column-width,1);
+  font-size: 2.6rem;
+  border-bottom: 1px $secondary_color;
+}
+@mixin area_header{
+  font-size: 1.6rem ;
+  border-bottom: 1px $secondary_color;
+}
+
 .mobile_inline_block,.mobile_block{
   display:none;
 }
 
+.area_header{
+  //@include zen-clear(both);
+  // @include zen-grid-item(4,1);
+  font-size:2rem;
+  display:block;
+  margin-top:1%;
+  border-bottom: 1px solid $subtle_color;
+
+}
 
 .shoppingActions,.continue_shopping,.secure_checkout{
   //these are the buttons
@@ -188,6 +217,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 
 //ideally, this will be the grid settings for all the pages, so it should be very flexiple
 .page_container{
+  height: 100%;
+  position: relative;
   $zen-column-count:7;
   $zen-gutter-width:6px;
   @include zen-grid-container;
@@ -203,6 +234,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   border:1px solid;
   margin-right:1.5rem;
 }
+/* the start of the shopping cart area on the shopping cart page*/
 .cart_container{    //shopping cart, the columns for the cart will shift around in the mobile aspect, so we 'll need a sub-grid here
   @include zen-clear();
  @include zen-grid-item(6,1);
@@ -296,14 +328,11 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     font-size: 1.3rem;
     @include zen-grid-item(4,1);
   }
-  .chatBar{
-    @include zen-grid-item(3,1, right);
-    font-weight: bold;
-    text-align: right;
-    :after{
-      @include f_awe("\f075", 1.3em);
-    }
+  .chatBar_espot {
+    @extend .baseChatBar;
+    @include zen-grid-item(3, 1, right);
   }
+
 
 }
 
@@ -542,8 +571,168 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   text-align:right;
   margin-right:1rem;
 }
+ /*end of the shopping cart page*/
 
-//hidden in desktop view "
+//the order review page
+.order_info {
+  $zen-column-count: 8;
+  @include zen-grid-container();
+ // @include zen-grid-background($grid-color: lightyellow);
+  font-size: 1.6rem;
+  height: 100%;
+
+  .breadcrumbs {
+    .steps {
+      display: inline-block;
+    }
+
+    .step1 {
+      @include zen-grid-item(3, 1);
+      background-color: #ffb6c1;
+    }
+    .step2 {
+      @include zen-grid-item(3, 4);
+    }
+    .step3 {
+      @include zen-grid-item(3, 7);
+    }
+  }
+
+  .chat_bar_fullWidth {
+    @include zen-clear();
+    @include zen-grid-item(8, 1);
+    @extend .baseChatBar;
+    background-color: lightcyan;
+  }
+  .espot_upper {
+    @include zen-clear(both);
+    @include zen-grid-item(8, 1);
+    background-color: lightgray;
+
+  }
+
+  .section_holder_left {
+    @include zen-clear();
+    @include zen-grid-item(4, 1);
+    @include zen-grid-container();
+  //  @include zen-grid-background($grid-color: lightblue);
+
+  }
+  .section_holder_right{
+    @include zen-clear(right);
+    @include zen-grid-item(4,5);
+    @include zen-grid-container();
+
+  }
+
+  .section_title {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    font-size: 2rem;
+    border-bottom:1px solid $subtle_color;
+    padding-bottom:2%;
+  }
+  .espot_mini {
+    background-color: lightcyan;
+    .e_text {
+      @include zen-clear();
+      @include zen-grid-item(8, 1);
+      float: none;
+    }
+    .shopRunner {
+      @include zen-clear();
+      @include zen-grid-item(5, 1);
+      float: none;
+    }
+  }
+  .multi_ship {
+    @include zen-grid-item(3, 1);
+    margin-bottom: 2%;
+  }
+  .helper_text {
+    @include zen-grid-item(5, 4);
+    font-size: 1.6rem;
+    margin-bottom: 2%;
+  }
+  .customer_info_area_left {
+    @include zen-clear(left);
+    @include zen-grid-item(4, 1);
+
+    /*
+     label{
+       @include zen-clear(right);
+       @include zen-grid-item(3,1);
+     }
+     input{
+       @include zen-clear(right);
+       @include zen-grid-item(4,1);
+     }*/
+  }
+  .customer_info_area_right {
+    //  @include zen-clear(right);
+    fieldset {
+      border: none;
+    }
+    @include zen-grid-item(4, 5);
+    .shipping_label_input, .shipping_label_radio {
+      display: block;
+    }
+  }
+  .order_fieldset {
+    border: none;
+  }
+
+  .billing_address {
+    @include zen-grid-item(8, 1);
+  }
+  .payment_method {
+    @include zen-clear(right);
+    @include zen-grid-item(8, 9);
+  }
+
+  .section_holder_right{
+    .review_cart{
+      .review_product_row{
+        @include zen-clear();
+        .item_image{
+          @include zen-grid-item(2,1);
+          display:inline-block;
+          //width:30%;
+          img{
+            width:100%;
+          }
+        }
+        .item_details{
+          @include zen-grid-item(3,3);
+        }
+        .price{
+          @include zen-grid-item(2,7)
+        }
+      }
+    }
+    .promoForm{
+     // @include zen-clear();
+    }
+    .order_total{
+      @include zen-clear();
+
+      div[class$="_label"]{
+        @include zen-clear(both);
+        @include zen-grid-item(4,3);
+      }
+      div[class$="_value"]{
+
+        @include zen-grid-item(2,7);
+        //text-align: right;
+      }
+
+    }
+
+  }
+}
+
+
 
 @media all and (min-width:640px) and (max-width: 640px){
 

@@ -1,5 +1,5 @@
 /* line 20, ../sass/commerce_responsive.scss */
-.baseFontAwesome, .cust_service_phone_link ::before, .espot_Cart_upper .chatBar :after, .cart .productRow .item_details .free_gift :before, .cart .productRow .remove :before, .cart .productRow .carePak .viewOptionLink::before {
+.baseFontAwesome, .baseChatBar:after, .espot_Cart_upper .chatBar_espot:after, .order_info .chat_bar_fullWidth:after, .cust_service_phone_link ::before, .cart .productRow .item_details .free_gift :before, .cart .productRow .remove :before, .cart .productRow .carePak .viewOptionLink::before {
   font-family: FontAwesome;
   display: inline-block;
   font-style: normal;
@@ -19,22 +19,35 @@
 }
 */
 /* line 77, ../sass/commerce_responsive.scss */
+.baseChatBar, .espot_Cart_upper .chatBar_espot, .order_info .chat_bar_fullWidth {
+  font-weight: bold;
+  text-align: right;
+}
+/* line 80, ../sass/commerce_responsive.scss */
+.baseChatBar:after, .espot_Cart_upper .chatBar_espot:after, .order_info .chat_bar_fullWidth:after {
+  font-size: 1.3rem;
+  line-height: 1.625rem;
+  content: "\f075";
+  color: inherit;
+}
+
+/* line 86, ../sass/commerce_responsive.scss */
 html {
   font-size: 62.5%;
 }
 
-/* line 80, ../sass/commerce_responsive.scss */
+/* line 89, ../sass/commerce_responsive.scss */
 body {
   font-size: 1.3rem;
-  position: relative;
+  height: 100%;
 }
 
-/* line 86, ../sass/commerce_responsive.scss */
-H1 {
+/* line 95, ../sass/commerce_responsive.scss */
+H1, h1 {
   font-size: 2.8rem;
 }
 
-/* line 90, ../sass/commerce_responsive.scss */
+/* line 99, ../sass/commerce_responsive.scss */
 .gray_gradient_button {
   border: 1px solid #666666;
   background-color: #ffffff;
@@ -49,7 +62,7 @@ H1 {
   border: none;
 }
 
-/* line 105, ../sass/commerce_responsive.scss */
+/* line 114, ../sass/commerce_responsive.scss */
 .red_gradient_button {
   border: 1px solid #df0909;
   background-color: #F44F50;
@@ -64,12 +77,20 @@ H1 {
   border: none;
 }
 
-/* line 119, ../sass/commerce_responsive.scss */
+/* line 139, ../sass/commerce_responsive.scss */
 .mobile_inline_block, .mobile_block {
   display: none;
 }
 
-/* line 124, ../sass/commerce_responsive.scss */
+/* line 143, ../sass/commerce_responsive.scss */
+.area_header {
+  font-size: 2rem;
+  display: block;
+  margin-top: 1%;
+  border-bottom: 1px solid #efefef;
+}
+
+/* line 153, ../sass/commerce_responsive.scss */
 .shoppingActions, .apply_button, .continue_shopping, .secure_checkout {
   color: #ffffff;
   font-size: 1.3rem;
@@ -78,7 +99,7 @@ H1 {
   padding: 0 1rem;
 }
 
-/* line 134, ../sass/commerce_responsive.scss */
+/* line 163, ../sass/commerce_responsive.scss */
 .apply_button {
   margin-left: -.7rem;
   width: 10rem;
@@ -86,14 +107,14 @@ H1 {
   margin-right: 2%;
 }
 
-/* line 141, ../sass/commerce_responsive.scss */
+/* line 170, ../sass/commerce_responsive.scss */
 .no_decoration_link {
   text-decoration: none;
   color: inherit;
 }
 
 /*overrides*/
-/* line 148, ../sass/commerce_responsive.scss */
+/* line 177, ../sass/commerce_responsive.scss */
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   /* display: none; <- Crashes Chrome on hover */
   -webkit-appearance: none;
@@ -102,23 +123,23 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 /*utility classes*/
-/* line 155, ../sass/commerce_responsive.scss */
+/* line 184, ../sass/commerce_responsive.scss */
 .accordion-toggle::after {
   content: " (-)";
 }
 
-/* line 159, ../sass/commerce_responsive.scss */
+/* line 188, ../sass/commerce_responsive.scss */
 .accordion-toggle.closed::after {
   content: " (+)";
 }
 
-/* line 162, ../sass/commerce_responsive.scss */
+/* line 191, ../sass/commerce_responsive.scss */
 .normal_link {
   color: #666666;
   font-weight: normal;
 }
 
-/* line 167, ../sass/commerce_responsive.scss */
+/* line 196, ../sass/commerce_responsive.scss */
 .leftCell {
   clear: right;
   float: right;
@@ -138,7 +159,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   background-color: #ffb6c1;
 }
 
-/* line 172, ../sass/commerce_responsive.scss */
+/* line 201, ../sass/commerce_responsive.scss */
 .rightCell {
   float: right;
   width: 200%;
@@ -157,41 +178,43 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   text-align: right;
 }
 
-/* line 177, ../sass/commerce_responsive.scss */
+/* line 206, ../sass/commerce_responsive.scss */
 .title_Text {
   font-size: 2.6Rem;
 }
 
-/* line 180, ../sass/commerce_responsive.scss */
+/* line 209, ../sass/commerce_responsive.scss */
 .largeText, .order_breakdown .order_total .sub_total_label, .order_breakdown .order_total .sub_total_value {
   font-size: 1.9rem;
 }
 
-/* line 183, ../sass/commerce_responsive.scss */
+/* line 212, ../sass/commerce_responsive.scss */
 .input {
   font-size: 1.6rem;
   line-height: 3.5rem;
 }
 
-/* line 190, ../sass/commerce_responsive.scss */
+/* line 219, ../sass/commerce_responsive.scss */
 .page_container {
+  height: 100%;
+  position: relative;
   *position: relative;
   *zoom: 1;
   width: 98%;
   margin: 1rem auto;
   padding: 0 1rem;
 }
-/* line 46, ../../../.rvm/gems/ruby-2.0.0-p0/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+/* line 46, ../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .page_container:before, .page_container:after {
   content: "";
   display: table;
 }
-/* line 50, ../../../.rvm/gems/ruby-2.0.0-p0/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+/* line 50, ../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .page_container:after {
   clear: both;
 }
 
-/* line 200, ../sass/commerce_responsive.scss */
+/* line 231, ../sass/commerce_responsive.scss */
 .espot_top {
   float: left;
   width: 100%;
@@ -212,7 +235,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   margin-right: 1.5rem;
 }
 
-/* line 206, ../sass/commerce_responsive.scss */
+/* the start of the shopping cart area on the shopping cart page*/
+/* line 238, ../sass/commerce_responsive.scss */
 .cart_container {
   clear: left;
   float: left;
@@ -235,7 +259,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   margin-top: 1rem;
 }
 
-/* line 215, ../sass/commerce_responsive.scss */
+/* line 247, ../sass/commerce_responsive.scss */
 .recommendedProductArea {
   float: left;
   width: 14.28571%;
@@ -253,40 +277,40 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow-y: visible;
   height: 100%;
 }
-/* line 219, ../sass/commerce_responsive.scss */
+/* line 251, ../sass/commerce_responsive.scss */
 .recommendedProductArea .recommendedProduct {
   display: block;
   list-style-type: none;
   text-align: center;
   margin-left: 10px;
 }
-/* line 224, ../sass/commerce_responsive.scss */
+/* line 256, ../sass/commerce_responsive.scss */
 .recommendedProductArea .recommendedProduct p {
   margin: 3rem 0;
   font-size: 1.4rem;
   font-weight: bold;
   color: #ee0000;
 }
-/* line 232, ../sass/commerce_responsive.scss */
+/* line 264, ../sass/commerce_responsive.scss */
 .recommendedProductArea .recommendedProduct ul {
   padding: 0;
   margin: 0;
   list-style-type: none;
 }
-/* line 236, ../sass/commerce_responsive.scss */
+/* line 268, ../sass/commerce_responsive.scss */
 .recommendedProductArea .recommendedProduct ul li {
   font-size: 1.6rem;
   line-height: 2.0rem;
   color: #333333;
 }
-/* line 243, ../sass/commerce_responsive.scss */
+/* line 275, ../sass/commerce_responsive.scss */
 .recommendedProductArea .recommendedProduct img {
   width: 100%;
   display: block;
   margin: .25rem auto .25rem;
   border: 1px solid #666666;
 }
-/* line 253, ../sass/commerce_responsive.scss */
+/* line 285, ../sass/commerce_responsive.scss */
 .recommendedProductArea .button_add_cart {
   color: white;
   font-size: 1.1rem;
@@ -296,24 +320,24 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   margin: 5% auto 18% auto;
 }
 
-/* line 263, ../sass/commerce_responsive.scss */
+/* line 295, ../sass/commerce_responsive.scss */
 .cart_controls {
   margin: 1% auto;
   background-color: white;
   *position: relative;
   *zoom: 1;
 }
-/* line 46, ../../../.rvm/gems/ruby-2.0.0-p0/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+/* line 46, ../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .cart_controls:before, .cart_controls:after {
   content: "";
   display: table;
 }
-/* line 50, ../../../.rvm/gems/ruby-2.0.0-p0/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+/* line 50, ../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .cart_controls:after {
   clear: both;
 }
 
-/* line 268, ../sass/commerce_responsive.scss */
+/* line 300, ../sass/commerce_responsive.scss */
 .cart_id {
   float: left;
   width: 42.85714%;
@@ -331,17 +355,17 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow-y: visible;
   text-align: left;
 }
-/* line 271, ../sass/commerce_responsive.scss */
+/* line 303, ../sass/commerce_responsive.scss */
 .cart_id .cart_id_number {
   margin-left: 1rem;
   color: #666666;
 }
 
-/* line 276, ../sass/commerce_responsive.scss */
+/* line 308, ../sass/commerce_responsive.scss */
 .cust_service_phone_link {
   display: none;
 }
-/* line 278, ../sass/commerce_responsive.scss */
+/* line 310, ../sass/commerce_responsive.scss */
 .cust_service_phone_link ::before {
   font-size: 1.1em;
   line-height: 1.375em;
@@ -349,7 +373,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   color: #ee0000;
 }
 
-/* line 282, ../sass/commerce_responsive.scss */
+/* line 314, ../sass/commerce_responsive.scss */
 .cart_buttons {
   float: right;
   width: 57.14286%;
@@ -369,7 +393,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   margin-right: 1rem;
 }
 
-/* line 288, ../sass/commerce_responsive.scss */
+/* line 320, ../sass/commerce_responsive.scss */
 .espot_Cart_upper {
   background-color: #efefef;
   padding: 1%;
@@ -378,16 +402,16 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   *zoom: 1;
   clear: left;
 }
-/* line 46, ../../../.rvm/gems/ruby-2.0.0-p0/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+/* line 46, ../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .espot_Cart_upper:before, .espot_Cart_upper:after {
   content: "";
   display: table;
 }
-/* line 50, ../../../.rvm/gems/ruby-2.0.0-p0/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+/* line 50, ../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .espot_Cart_upper:after {
   clear: both;
 }
-/* line 295, ../sass/commerce_responsive.scss */
+/* line 327, ../sass/commerce_responsive.scss */
 .espot_Cart_upper .shopRunner {
   font-size: 1.3rem;
   float: left;
@@ -405,8 +429,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow: hidden;
   _overflow-y: visible;
 }
-/* line 299, ../sass/commerce_responsive.scss */
-.espot_Cart_upper .chatBar {
+/* line 331, ../sass/commerce_responsive.scss */
+.espot_Cart_upper .chatBar_espot {
   float: right;
   width: 42.85714%;
   margin-right: 0%;
@@ -421,18 +445,9 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _display: inline;
   _overflow: hidden;
   _overflow-y: visible;
-  font-weight: bold;
-  text-align: right;
-}
-/* line 303, ../sass/commerce_responsive.scss */
-.espot_Cart_upper .chatBar :after {
-  font-size: 1.3em;
-  line-height: 1.625em;
-  content: "\f075";
-  color: inherit;
 }
 
-/* line 311, ../sass/commerce_responsive.scss */
+/* line 340, ../sass/commerce_responsive.scss */
 .cart {
   clear: left;
   float: left;
@@ -459,14 +474,14 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   font-size: 1.4rem;
   line-height: 1.75rem;
 }
-/* line 325, ../sass/commerce_responsive.scss */
+/* line 354, ../sass/commerce_responsive.scss */
 .cart .titleRow {
   font-weight: bold;
   color: #666666;
   margin: 3rem 0 2rem 0;
   padding: 1rem 0;
 }
-/* line 332, ../sass/commerce_responsive.scss */
+/* line 361, ../sass/commerce_responsive.scss */
 .cart .titleRow .item_descriptionHdr {
   float: left;
   width: 40%;
@@ -483,7 +498,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow: hidden;
   _overflow-y: visible;
 }
-/* line 335, ../sass/commerce_responsive.scss */
+/* line 364, ../sass/commerce_responsive.scss */
 .cart .titleRow .qtyHdr {
   float: left;
   width: 10%;
@@ -501,7 +516,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow-y: visible;
   width: 8%;
 }
-/* line 339, ../sass/commerce_responsive.scss */
+/* line 368, ../sass/commerce_responsive.scss */
 .cart .titleRow .availabilityHdr {
   float: left;
   width: 10%;
@@ -519,7 +534,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow-y: visible;
   width: 12%;
 }
-/* line 343, ../sass/commerce_responsive.scss */
+/* line 372, ../sass/commerce_responsive.scss */
 .cart .titleRow .priceHdr {
   float: left;
   width: 30%;
@@ -536,7 +551,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow: hidden;
   _overflow-y: visible;
 }
-/* line 346, ../sass/commerce_responsive.scss */
+/* line 375, ../sass/commerce_responsive.scss */
 .cart .titleRow .totalHdr {
   float: left;
   width: 20%;
@@ -553,18 +568,18 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow: hidden;
   _overflow-y: visible;
 }
-/* line 350, ../sass/commerce_responsive.scss */
+/* line 379, ../sass/commerce_responsive.scss */
 .cart .productRow {
   clear: left;
   border-top: 1px solid #efefef;
   margin-top: 1rem;
   padding-top: 1rem;
 }
-/* line 355, ../sass/commerce_responsive.scss */
+/* line 384, ../sass/commerce_responsive.scss */
 .cart .productRow div {
   margin: .5rem 0;
 }
-/* line 358, ../sass/commerce_responsive.scss */
+/* line 387, ../sass/commerce_responsive.scss */
 .cart .productRow .item_image {
   float: left;
   width: 20%;
@@ -581,14 +596,14 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow: hidden;
   _overflow-y: visible;
 }
-/* line 360, ../sass/commerce_responsive.scss */
+/* line 389, ../sass/commerce_responsive.scss */
 .cart .productRow .item_image img {
   width: 95%;
   padding: 1.5%;
   margin: auto;
   border: 1px solid #efefef;
 }
-/* line 367, ../sass/commerce_responsive.scss */
+/* line 396, ../sass/commerce_responsive.scss */
 .cart .productRow .item_details {
   float: left;
   width: 20%;
@@ -605,34 +620,34 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow: hidden;
   _overflow-y: visible;
 }
-/* line 370, ../sass/commerce_responsive.scss */
+/* line 399, ../sass/commerce_responsive.scss */
 .cart .productRow .item_details .product_name {
   font-size: 1.4rem;
   font-weight: bold;
   color: #ee0000;
 }
-/* line 375, ../sass/commerce_responsive.scss */
+/* line 404, ../sass/commerce_responsive.scss */
 .cart .productRow .item_details .sku {
   color: #666666;
 }
-/* line 378, ../sass/commerce_responsive.scss */
+/* line 407, ../sass/commerce_responsive.scss */
 .cart .productRow .item_details .instant_savings {
   font-weight: bold;
   font-size: 1.2rem;
 }
-/* line 382, ../sass/commerce_responsive.scss */
+/* line 411, ../sass/commerce_responsive.scss */
 .cart .productRow .item_details .free_gift {
   color: #ee0000;
   font-size: 1.4rem;
 }
-/* line 387, ../sass/commerce_responsive.scss */
+/* line 416, ../sass/commerce_responsive.scss */
 .cart .productRow .item_details .free_gift :before {
   font-size: 1.2rem;
   line-height: 1.5rem;
   content: "\f06b";
   color: inherit;
 }
-/* line 393, ../sass/commerce_responsive.scss */
+/* line 422, ../sass/commerce_responsive.scss */
 .cart .productRow .qty {
   float: left;
   width: 10%;
@@ -650,13 +665,13 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow-y: visible;
   width: 8%;
 }
-/* line 396, ../sass/commerce_responsive.scss */
+/* line 425, ../sass/commerce_responsive.scss */
 .cart .productRow .qty input {
   width: 4.1rem;
   height: 2.4rem;
   text-align: center;
 }
-/* line 402, ../sass/commerce_responsive.scss */
+/* line 431, ../sass/commerce_responsive.scss */
 .cart .productRow .availability {
   float: left;
   width: 10%;
@@ -675,7 +690,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   color: #666666;
   width: 12%;
 }
-/* line 408, ../sass/commerce_responsive.scss */
+/* line 437, ../sass/commerce_responsive.scss */
 .cart .productRow .price {
   float: left;
   width: 20%;
@@ -694,13 +709,13 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   color: #333333;
   font-size: 1.4rem;
 }
-/* line 413, ../sass/commerce_responsive.scss */
+/* line 442, ../sass/commerce_responsive.scss */
 .cart .productRow .old_price {
   font-size: 1.3;
   text-decoration: line-through;
   color: #666666;
 }
-/* line 418, ../sass/commerce_responsive.scss */
+/* line 447, ../sass/commerce_responsive.scss */
 .cart .productRow .total {
   float: left;
   width: 10%;
@@ -719,7 +734,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   font-size: 1.6rem;
   color: #ee0000;
 }
-/* line 423, ../sass/commerce_responsive.scss */
+/* line 452, ../sass/commerce_responsive.scss */
 .cart .productRow .remove {
   float: left;
   width: 10%;
@@ -737,14 +752,14 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow-y: visible;
   color: #333333;
 }
-/* line 426, ../sass/commerce_responsive.scss */
+/* line 455, ../sass/commerce_responsive.scss */
 .cart .productRow .remove :before {
   font-size: 1.5rem;
   line-height: 1.875rem;
   content: "\f00d";
   color: inherit;
 }
-/* line 431, ../sass/commerce_responsive.scss */
+/* line 460, ../sass/commerce_responsive.scss */
 .cart .productRow .carePak {
   clear: left;
   float: left;
@@ -766,7 +781,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   margin: 3% 0 4% 5%;
   width: 80%;
 }
-/* line 438, ../sass/commerce_responsive.scss */
+/* line 467, ../sass/commerce_responsive.scss */
 .cart .productRow .carePak .viewOptionLink::before {
   font-size: 1.4rem;
   line-height: 1.75rem;
@@ -774,7 +789,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   color: inherit;
 }
 
-/* line 448, ../sass/commerce_responsive.scss */
+/* line 477, ../sass/commerce_responsive.scss */
 .espot_Cart_lower {
   clear: left;
   float: left;
@@ -796,7 +811,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   margin: 4% auto;
   margin-right: 1.5rem;
 }
-/* line 456, ../sass/commerce_responsive.scss */
+/* line 485, ../sass/commerce_responsive.scss */
 .espot_Cart_lower .espot_text {
   margin: 2% auto;
   width: 80%;
@@ -804,7 +819,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   text-align: center;
 }
 
-/* line 463, ../sass/commerce_responsive.scss */
+/* line 492, ../sass/commerce_responsive.scss */
 .promoForm {
   clear: left;
   float: right;
@@ -826,34 +841,34 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   margin: 1% auto;
   width: 98%;
 }
-/* line 69, ../sass/commerce_responsive.scss */
+/* line 70, ../sass/commerce_responsive.scss */
 .promoForm input.placeholder {
   color: #ffffff;
 }
-/* line 70, ../sass/commerce_responsive.scss */
+/* line 71, ../sass/commerce_responsive.scss */
 .promoForm input:-moz-placeholder {
   color: #ffffff;
 }
-/* line 71, ../sass/commerce_responsive.scss */
+/* line 72, ../sass/commerce_responsive.scss */
 .promoForm input::-moz-placeholder {
   color: #ffffff;
 }
-/* line 72, ../sass/commerce_responsive.scss */
+/* line 73, ../sass/commerce_responsive.scss */
 .promoForm input:-ms-input-placeholder {
   color: #ffffff;
 }
-/* line 73, ../sass/commerce_responsive.scss */
+/* line 74, ../sass/commerce_responsive.scss */
 .promoForm input::-webkit-input-placeholder {
   color: #ffffff;
 }
-/* line 475, ../sass/commerce_responsive.scss */
+/* line 504, ../sass/commerce_responsive.scss */
 .promoForm .promo_input {
   height: 3.5rem;
   width: 40%;
   font-size: 1.3rem;
 }
 
-/* line 482, ../sass/commerce_responsive.scss */
+/* line 511, ../sass/commerce_responsive.scss */
 .order_breakdown {
   font-size: 1.5rem;
   line-height: 1.6rem;
@@ -863,16 +878,16 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   clear: both;
   margin: 2% 2% 2% 0;
 }
-/* line 46, ../../../.rvm/gems/ruby-2.0.0-p0/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+/* line 46, ../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .order_breakdown:before, .order_breakdown:after {
   content: "";
   display: table;
 }
-/* line 50, ../../../.rvm/gems/ruby-2.0.0-p0/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+/* line 50, ../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .order_breakdown:after {
   clear: both;
 }
-/* line 489, ../sass/commerce_responsive.scss */
+/* line 518, ../sass/commerce_responsive.scss */
 .order_breakdown .order_disclaimer {
   float: left;
   width: 60%;
@@ -889,13 +904,13 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow: hidden;
   _overflow-y: visible;
 }
-/* line 492, ../sass/commerce_responsive.scss */
+/* line 521, ../sass/commerce_responsive.scss */
 .order_breakdown .order_total {
   line-height: 3.9rem;
   clear: right;
   font-size: 1.5rem;
 }
-/* line 496, ../sass/commerce_responsive.scss */
+/* line 525, ../sass/commerce_responsive.scss */
 .order_breakdown .order_total .merchandise_label {
   float: right;
   width: 20%;
@@ -912,7 +927,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow: hidden;
   _overflow-y: visible;
 }
-/* line 499, ../sass/commerce_responsive.scss */
+/* line 528, ../sass/commerce_responsive.scss */
 .order_breakdown .order_total .merchandise_value {
   float: right;
   width: 20%;
@@ -930,7 +945,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow-y: visible;
   text-align: right;
 }
-/* line 505, ../sass/commerce_responsive.scss */
+/* line 534, ../sass/commerce_responsive.scss */
 .order_breakdown .order_total .discount_label {
   clear: right;
   float: right;
@@ -948,7 +963,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow: hidden;
   _overflow-y: visible;
 }
-/* line 509, ../sass/commerce_responsive.scss */
+/* line 538, ../sass/commerce_responsive.scss */
 .order_breakdown .order_total .discount_value {
   float: right;
   width: 20%;
@@ -966,7 +981,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow-y: visible;
   text-align: right;
 }
-/* line 514, ../sass/commerce_responsive.scss */
+/* line 543, ../sass/commerce_responsive.scss */
 .order_breakdown .order_total .estimated_shipping_label {
   clear: right;
   float: right;
@@ -984,7 +999,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow: hidden;
   _overflow-y: visible;
 }
-/* line 519, ../sass/commerce_responsive.scss */
+/* line 548, ../sass/commerce_responsive.scss */
 .order_breakdown .order_total .estimated_shipping_value {
   float: right;
   width: 20%;
@@ -1002,7 +1017,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow-y: visible;
   text-align: right;
 }
-/* line 524, ../sass/commerce_responsive.scss */
+/* line 553, ../sass/commerce_responsive.scss */
 .order_breakdown .order_total .sub_total_label {
   clear: right;
   float: right;
@@ -1021,7 +1036,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   _overflow-y: visible;
   color: #333333;
 }
-/* line 530, ../sass/commerce_responsive.scss */
+/* line 559, ../sass/commerce_responsive.scss */
 .order_breakdown .order_total .sub_total_value {
   float: right;
   width: 20%;
@@ -1040,7 +1055,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   text-align: right;
 }
 
-/* line 540, ../sass/commerce_responsive.scss */
+/* line 569, ../sass/commerce_responsive.scss */
 .cart_buttons_lower {
   float: right;
   width: 100%;
@@ -1060,28 +1075,476 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   margin-right: 1rem;
 }
 
+/*end of the shopping cart page*/
+/* line 577, ../sass/commerce_responsive.scss */
+.order_info {
+  *position: relative;
+  *zoom: 1;
+  font-size: 1.6rem;
+  height: 100%;
+}
+/* line 46, ../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+.order_info:before, .order_info:after {
+  content: "";
+  display: table;
+}
+/* line 50, ../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+.order_info:after {
+  clear: both;
+}
+/* line 585, ../sass/commerce_responsive.scss */
+.order_info .breadcrumbs .steps {
+  display: inline-block;
+}
+/* line 589, ../sass/commerce_responsive.scss */
+.order_info .breadcrumbs .step1 {
+  float: left;
+  width: 37.5%;
+  margin-left: 0%;
+  margin-right: -37.5%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+  background-color: #ffb6c1;
+}
+/* line 593, ../sass/commerce_responsive.scss */
+.order_info .breadcrumbs .step2 {
+  float: left;
+  width: 37.5%;
+  margin-left: 37.5%;
+  margin-right: -75%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+}
+/* line 596, ../sass/commerce_responsive.scss */
+.order_info .breadcrumbs .step3 {
+  float: left;
+  width: 37.5%;
+  margin-left: 75%;
+  margin-right: -112.5%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+}
+/* line 601, ../sass/commerce_responsive.scss */
+.order_info .chat_bar_fullWidth {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+  background-color: lightcyan;
+}
+/* line 607, ../sass/commerce_responsive.scss */
+.order_info .espot_upper {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+  background-color: lightgray;
+}
+/* line 614, ../sass/commerce_responsive.scss */
+.order_info .section_holder_left {
+  clear: left;
+  float: left;
+  width: 50%;
+  margin-left: 0%;
+  margin-right: -50%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+  *position: relative;
+  *zoom: 1;
+}
+/* line 46, ../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+.order_info .section_holder_left:before, .order_info .section_holder_left:after {
+  content: "";
+  display: table;
+}
+/* line 50, ../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+.order_info .section_holder_left:after {
+  clear: both;
+}
+/* line 621, ../sass/commerce_responsive.scss */
+.order_info .section_holder_right {
+  clear: right;
+  float: left;
+  width: 50%;
+  margin-left: 50%;
+  margin-right: -100%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+  *position: relative;
+  *zoom: 1;
+}
+/* line 46, ../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+.order_info .section_holder_right:before, .order_info .section_holder_right:after {
+  content: "";
+  display: table;
+}
+/* line 50, ../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+.order_info .section_holder_right:after {
+  clear: both;
+}
+/* line 628, ../sass/commerce_responsive.scss */
+.order_info .section_title {
+  display: block;
+  width: 100%;
+  font-size: 20px;
+  font-size: 2rem;
+  border-bottom: 1px solid #efefef;
+  padding-bottom: 2%;
+}
+/* line 636, ../sass/commerce_responsive.scss */
+.order_info .espot_mini {
+  background-color: lightcyan;
+}
+/* line 638, ../sass/commerce_responsive.scss */
+.order_info .espot_mini .e_text {
+  clear: left;
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+  float: none;
+}
+/* line 643, ../sass/commerce_responsive.scss */
+.order_info .espot_mini .shopRunner {
+  clear: left;
+  float: left;
+  width: 62.5%;
+  margin-left: 0%;
+  margin-right: -62.5%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+  float: none;
+}
+/* line 649, ../sass/commerce_responsive.scss */
+.order_info .multi_ship {
+  float: left;
+  width: 37.5%;
+  margin-left: 0%;
+  margin-right: -37.5%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+  margin-bottom: 2%;
+}
+/* line 653, ../sass/commerce_responsive.scss */
+.order_info .helper_text {
+  float: left;
+  width: 62.5%;
+  margin-left: 37.5%;
+  margin-right: -100%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+  font-size: 1.6rem;
+  margin-bottom: 2%;
+}
+/* line 658, ../sass/commerce_responsive.scss */
+.order_info .customer_info_area_left {
+  clear: left;
+  float: left;
+  width: 50%;
+  margin-left: 0%;
+  margin-right: -50%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+  /*
+   label{
+     @include zen-clear(right);
+     @include zen-grid-item(3,1);
+   }
+   input{
+     @include zen-clear(right);
+     @include zen-grid-item(4,1);
+   }*/
+}
+/* line 672, ../sass/commerce_responsive.scss */
+.order_info .customer_info_area_right {
+  float: left;
+  width: 50%;
+  margin-left: 50%;
+  margin-right: -100%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+}
+/* line 674, ../sass/commerce_responsive.scss */
+.order_info .customer_info_area_right fieldset {
+  border: none;
+}
+/* line 678, ../sass/commerce_responsive.scss */
+.order_info .customer_info_area_right .shipping_label_input, .order_info .customer_info_area_right .shipping_label_radio {
+  display: block;
+}
+/* line 682, ../sass/commerce_responsive.scss */
+.order_info .order_fieldset {
+  border: none;
+}
+/* line 686, ../sass/commerce_responsive.scss */
+.order_info .billing_address {
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+}
+/* line 689, ../sass/commerce_responsive.scss */
+.order_info .payment_method {
+  clear: right;
+  float: left;
+  width: 100%;
+  margin-left: 100%;
+  margin-right: -200%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+}
+/* line 696, ../sass/commerce_responsive.scss */
+.order_info .section_holder_right .review_cart .review_product_row {
+  clear: left;
+}
+/* line 698, ../sass/commerce_responsive.scss */
+.order_info .section_holder_right .review_cart .review_product_row .item_image {
+  float: left;
+  width: 25%;
+  margin-left: 0%;
+  margin-right: -25%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+  display: inline-block;
+}
+/* line 702, ../sass/commerce_responsive.scss */
+.order_info .section_holder_right .review_cart .review_product_row .item_image img {
+  width: 100%;
+}
+/* line 706, ../sass/commerce_responsive.scss */
+.order_info .section_holder_right .review_cart .review_product_row .item_details {
+  float: left;
+  width: 37.5%;
+  margin-left: 25%;
+  margin-right: -62.5%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+}
+/* line 709, ../sass/commerce_responsive.scss */
+.order_info .section_holder_right .review_cart .review_product_row .price {
+  float: left;
+  width: 25%;
+  margin-left: 75%;
+  margin-right: -100%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+}
+/* line 717, ../sass/commerce_responsive.scss */
+.order_info .section_holder_right .order_total {
+  clear: left;
+}
+/* line 720, ../sass/commerce_responsive.scss */
+.order_info .section_holder_right .order_total div[class$="_label"] {
+  clear: both;
+  float: left;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: -75%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+}
+/* line 724, ../sass/commerce_responsive.scss */
+.order_info .section_holder_right .order_total div[class$="_value"] {
+  float: left;
+  width: 25%;
+  margin-left: 75%;
+  margin-right: -100%;
+  padding-left: 4px;
+  padding-right: 4px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+}
+
 @media all and (max-width: 640px) {
-  /* line 553, ../sass/commerce_responsive.scss */
+  /* line 742, ../sass/commerce_responsive.scss */
   .mobile_hide {
     display: none;
   }
 
-  /* line 556, ../sass/commerce_responsive.scss */
+  /* line 745, ../sass/commerce_responsive.scss */
   .mobile_inline_block {
     display: inline-block;
   }
 
-  /* line 559, ../sass/commerce_responsive.scss */
+  /* line 748, ../sass/commerce_responsive.scss */
   .mobile_block {
     display: block;
   }
 
-  /* line 562, ../sass/commerce_responsive.scss */
+  /* line 751, ../sass/commerce_responsive.scss */
   .chatBar {
     display: none;
   }
 
-  /* line 565, ../sass/commerce_responsive.scss */
+  /* line 754, ../sass/commerce_responsive.scss */
   .continue_shopping, .secure_checkout {
     width: 48%;
     padding: 1%;
@@ -1089,23 +1552,23 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     margin-right: 0;
   }
 
-  /* line 571, ../sass/commerce_responsive.scss */
+  /* line 760, ../sass/commerce_responsive.scss */
   .secure_checkout {
     margin-left: .5%;
   }
 
-  /* line 575, ../sass/commerce_responsive.scss */
+  /* line 764, ../sass/commerce_responsive.scss */
   .title_Text {
     font-size: 2.5rem;
   }
 
-  /* line 579, ../sass/commerce_responsive.scss */
+  /* line 768, ../sass/commerce_responsive.scss */
   .cart_container {
     clear: left;
     float: left;
-    width: 100%;
+    width: 125%;
     margin-left: 0%;
-    margin-right: -100%;
+    margin-right: -125%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1118,13 +1581,13 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     _overflow-y: visible;
     margin-top: 10rem;
   }
-  /* line 585, ../sass/commerce_responsive.scss */
+  /* line 774, ../sass/commerce_responsive.scss */
   .cart_container .cart_controls .cart_buttons {
     clear: left;
     float: left;
-    width: 100%;
+    width: 125%;
     margin-left: 0%;
-    margin-right: -100%;
+    margin-right: -125%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1139,25 +1602,25 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     text-align: center;
     margin: -14rem 0 auto;
   }
-  /* line 592, ../sass/commerce_responsive.scss */
+  /* line 781, ../sass/commerce_responsive.scss */
   .cart_container .cart_controls .cart_id {
     display: inline-block;
     font-size: 3.2rem;
   }
-  /* line 595, ../sass/commerce_responsive.scss */
+  /* line 784, ../sass/commerce_responsive.scss */
   .cart_container .cart_controls .cart_id .cart_id_number {
     display: block;
     color: #666666;
     font-size: 1.8rem;
     padding-left: 0;
   }
-  /* line 603, ../sass/commerce_responsive.scss */
+  /* line 792, ../sass/commerce_responsive.scss */
   .cart_container .cart_controls .cust_service_phone_link {
     display: inline-block;
     float: right;
-    width: 50%;
+    width: 62.5%;
     margin-right: 0%;
-    margin-left: -50%;
+    margin-left: -62.5%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1175,37 +1638,20 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     font-size: 2.2rem;
     padding-right: 2.5%;
   }
-  /* line 612, ../sass/commerce_responsive.scss */
+  /* line 801, ../sass/commerce_responsive.scss */
   .cart_container .cart_controls .cust_service_phone_link ::before {
     padding-right: .4rem;
     margin-top: -1.25rem;
   }
-  /* line 620, ../sass/commerce_responsive.scss */
+  /* line 809, ../sass/commerce_responsive.scss */
   .cart_container .cart .titleRow .qtyHdr, .cart_container .cart .titleRow .availabilityHdr, .cart_container .cart .titleRow .priceHdr, .cart_container .cart .titleRow .totalHdr {
     display: none;
   }
-  /* line 623, ../sass/commerce_responsive.scss */
+  /* line 812, ../sass/commerce_responsive.scss */
   .cart_container .cart .titleRow .item_descriptionHdr {
     float: left;
-    width: 80%;
+    width: 100%;
     margin-left: 0%;
-    margin-right: -80%;
-    padding-left: 4px;
-    padding-right: 4px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-    word-wrap: break-word;
-    _display: inline;
-    _overflow: hidden;
-    _overflow-y: visible;
-  }
-  /* line 626, ../sass/commerce_responsive.scss */
-  .cart_container .cart .titleRow .detailsHdr {
-    float: left;
-    width: 20%;
-    margin-left: 80%;
     margin-right: -100%;
     padding-left: 4px;
     padding-right: 4px;
@@ -1218,24 +1664,41 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     _overflow: hidden;
     _overflow-y: visible;
   }
-  /* line 630, ../sass/commerce_responsive.scss */
+  /* line 815, ../sass/commerce_responsive.scss */
+  .cart_container .cart .titleRow .detailsHdr {
+    float: left;
+    width: 25%;
+    margin-left: 100%;
+    margin-right: -125%;
+    padding-left: 4px;
+    padding-right: 4px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
+  }
+  /* line 819, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow {
     clear: left;
     border-top: 1px solid #efefef;
     margin-top: 1rem;
     padding-top: 1rem;
   }
-  /* line 635, ../sass/commerce_responsive.scss */
+  /* line 824, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow div {
     margin: .5rem 0;
   }
-  /* line 638, ../sass/commerce_responsive.scss */
+  /* line 827, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .item_image {
     clear: left;
     float: left;
-    width: 30%;
+    width: 37.5%;
     margin-left: 0%;
-    margin-right: -30%;
+    margin-right: -37.5%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1247,20 +1710,20 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     _overflow: hidden;
     _overflow-y: visible;
   }
-  /* line 641, ../sass/commerce_responsive.scss */
+  /* line 830, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .item_image img {
     width: 95%;
     padding: 1.5%;
     margin: auto;
     border: 1px solid #efefef;
   }
-  /* line 648, ../sass/commerce_responsive.scss */
+  /* line 837, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .item_details {
     clear: right;
     float: left;
-    width: 40%;
-    margin-left: 30%;
-    margin-right: -70%;
+    width: 50%;
+    margin-left: 37.5%;
+    margin-right: -87.5%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1272,40 +1735,40 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     _overflow: hidden;
     _overflow-y: visible;
   }
-  /* line 652, ../sass/commerce_responsive.scss */
+  /* line 841, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .item_details .product_name {
     font-size: 1.4rem;
     font-weight: bold;
     color: #ee0000;
   }
-  /* line 657, ../sass/commerce_responsive.scss */
+  /* line 846, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .item_details .sku {
     color: #666666;
   }
-  /* line 660, ../sass/commerce_responsive.scss */
+  /* line 849, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .item_details .instant_savings {
     font-weight: bold;
     font-size: 1.2rem;
   }
-  /* line 664, ../sass/commerce_responsive.scss */
+  /* line 853, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .item_details .free_gift {
     color: #ee0000;
     font-size: 1.4rem;
   }
-  /* line 669, ../sass/commerce_responsive.scss */
+  /* line 858, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .item_details .free_gift :before {
     font-size: 1.2rem;
     line-height: 1.5rem;
     content: "\f06b";
     color: inherit;
   }
-  /* line 676, ../sass/commerce_responsive.scss */
+  /* line 865, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .qty {
     clear: right;
     float: right;
-    width: 30%;
+    width: 37.5%;
     margin-right: 0%;
-    margin-left: -30%;
+    margin-left: -37.5%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1318,25 +1781,25 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     _overflow-y: visible;
     margin: 0 auto;
   }
-  /* line 680, ../sass/commerce_responsive.scss */
+  /* line 869, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .qty label {
     padding-left: 10%;
     display: inline-block;
   }
-  /* line 684, ../sass/commerce_responsive.scss */
+  /* line 873, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .qty input {
     margin: 0 auto;
     width: 4.1rem;
     height: 2.4rem;
     text-align: center;
   }
-  /* line 691, ../sass/commerce_responsive.scss */
+  /* line 880, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .availability, .cart_container .cart .productRow .price, .cart_container .cart .productRow .old_price, .cart_container .cart .productRow .total, .cart_container .cart .productRow .remove {
     clear: right;
     float: right;
-    width: 30%;
+    width: 37.5%;
     margin-right: 0%;
-    margin-left: -30%;
+    margin-left: -37.5%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1350,16 +1813,16 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     text-align: center;
     margin-bottom: 1px;
   }
-  /* line 698, ../sass/commerce_responsive.scss */
+  /* line 887, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .availability {
     color: #666666;
   }
-  /* line 701, ../sass/commerce_responsive.scss */
+  /* line 890, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .price {
     color: #333333;
     font-size: 1.4rem;
   }
-  /* line 704, ../sass/commerce_responsive.scss */
+  /* line 893, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .price .old_price {
     display: block;
     width: 100%;
@@ -1367,29 +1830,29 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     text-decoration: line-through;
     color: #666666;
   }
-  /* line 713, ../sass/commerce_responsive.scss */
+  /* line 902, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .total {
     font-size: 1.6rem;
     color: #ee0000;
   }
-  /* line 717, ../sass/commerce_responsive.scss */
+  /* line 906, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .remove {
     color: #333333;
   }
-  /* line 719, ../sass/commerce_responsive.scss */
+  /* line 908, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .remove :before {
     font-size: 1.5rem;
     line-height: 1.875rem;
     content: "\f00d";
     color: inherit;
   }
-  /* line 723, ../sass/commerce_responsive.scss */
+  /* line 912, ../sass/commerce_responsive.scss */
   .cart_container .cart .productRow .carePak {
     clear: left;
     float: left;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: -90%;
+    width: 100%;
+    margin-left: 12.5%;
+    margin-right: -112.5%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1403,40 +1866,40 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     margin-top: 3rem;
     background-color: lightgoldenrodyellow;
   }
-  /* line 732, ../sass/commerce_responsive.scss */
+  /* line 921, ../sass/commerce_responsive.scss */
   .cart_container .espot_Cart_lower {
     margin-left: 4px;
   }
-  /* line 735, ../sass/commerce_responsive.scss */
+  /* line 924, ../sass/commerce_responsive.scss */
   .cart_container .promoForm {
     width: 100%;
   }
-  /* line 69, ../sass/commerce_responsive.scss */
+  /* line 70, ../sass/commerce_responsive.scss */
   .cart_container .promoForm input.placeholder {
     color: #ccc;
     padding-left: 3%;
   }
-  /* line 70, ../sass/commerce_responsive.scss */
+  /* line 71, ../sass/commerce_responsive.scss */
   .cart_container .promoForm input:-moz-placeholder {
     color: #ccc;
     padding-left: 3%;
   }
-  /* line 71, ../sass/commerce_responsive.scss */
+  /* line 72, ../sass/commerce_responsive.scss */
   .cart_container .promoForm input::-moz-placeholder {
     color: #ccc;
     padding-left: 3%;
   }
-  /* line 72, ../sass/commerce_responsive.scss */
+  /* line 73, ../sass/commerce_responsive.scss */
   .cart_container .promoForm input:-ms-input-placeholder {
     color: #ccc;
     padding-left: 3%;
   }
-  /* line 73, ../sass/commerce_responsive.scss */
+  /* line 74, ../sass/commerce_responsive.scss */
   .cart_container .promoForm input::-webkit-input-placeholder {
     color: #ccc;
     padding-left: 3%;
   }
-  /* line 743, ../sass/commerce_responsive.scss */
+  /* line 932, ../sass/commerce_responsive.scss */
   .cart_container .promoForm .promo_input {
     height: 3.5rem;
     width: 80%;
@@ -1445,17 +1908,17 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     display: inline-block;
     vertical-align: top;
   }
-  /* line 751, ../sass/commerce_responsive.scss */
+  /* line 940, ../sass/commerce_responsive.scss */
   .cart_container .promoForm .apply_button {
     width: 18%;
     margin-right: 1%;
   }
-  /* line 759, ../sass/commerce_responsive.scss */
+  /* line 948, ../sass/commerce_responsive.scss */
   .cart_container .order_disclaimer {
     float: left;
-    width: 30%;
+    width: 37.5%;
     margin-left: 0%;
-    margin-right: -30%;
+    margin-right: -37.5%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1469,18 +1932,18 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     vertical-align: middle;
     margin-top: 10%;
   }
-  /* line 765, ../sass/commerce_responsive.scss */
+  /* line 954, ../sass/commerce_responsive.scss */
   .cart_container .order_total {
     line-height: 3.9rem;
     clear: right;
     font-size: 2rem;
   }
-  /* line 769, ../sass/commerce_responsive.scss */
+  /* line 958, ../sass/commerce_responsive.scss */
   .cart_container .order_total .merchandise_label {
     float: right;
-    width: 40%;
-    margin-right: 30%;
-    margin-left: -70%;
+    width: 50%;
+    margin-right: 37.5%;
+    margin-left: -87.5%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1492,12 +1955,12 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     _overflow: hidden;
     _overflow-y: visible;
   }
-  /* line 773, ../sass/commerce_responsive.scss */
+  /* line 962, ../sass/commerce_responsive.scss */
   .cart_container .order_total .merchandise_value {
     float: right;
-    width: 30%;
+    width: 37.5%;
     margin-right: 0%;
-    margin-left: -30%;
+    margin-left: -37.5%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1510,13 +1973,13 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     _overflow-y: visible;
     text-align: right;
   }
-  /* line 779, ../sass/commerce_responsive.scss */
+  /* line 968, ../sass/commerce_responsive.scss */
   .cart_container .order_total .discount_label {
     clear: right;
     float: right;
-    width: 40%;
-    margin-right: 30%;
-    margin-left: -70%;
+    width: 50%;
+    margin-right: 37.5%;
+    margin-left: -87.5%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1528,12 +1991,12 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     _overflow: hidden;
     _overflow-y: visible;
   }
-  /* line 783, ../sass/commerce_responsive.scss */
+  /* line 972, ../sass/commerce_responsive.scss */
   .cart_container .order_total .discount_value {
     float: right;
-    width: 30%;
+    width: 37.5%;
     margin-right: 0%;
-    margin-left: -30%;
+    margin-left: -37.5%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1546,13 +2009,13 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     _overflow-y: visible;
     text-align: right;
   }
-  /* line 788, ../sass/commerce_responsive.scss */
+  /* line 977, ../sass/commerce_responsive.scss */
   .cart_container .order_total .estimated_shipping_label {
     clear: right;
     float: right;
-    width: 40%;
-    margin-right: 30%;
-    margin-left: -70%;
+    width: 50%;
+    margin-right: 37.5%;
+    margin-left: -87.5%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1564,12 +2027,12 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     _overflow: hidden;
     _overflow-y: visible;
   }
-  /* line 793, ../sass/commerce_responsive.scss */
+  /* line 982, ../sass/commerce_responsive.scss */
   .cart_container .order_total .estimated_shipping_value {
     float: right;
-    width: 30%;
+    width: 37.5%;
     margin-right: 0%;
-    margin-left: -30%;
+    margin-left: -37.5%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1583,13 +2046,13 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     text-align: right;
     color: #ee0000;
   }
-  /* line 799, ../sass/commerce_responsive.scss */
+  /* line 988, ../sass/commerce_responsive.scss */
   .cart_container .order_total .sub_total_label {
     clear: right;
     float: right;
-    width: 40%;
-    margin-right: 30%;
-    margin-left: -70%;
+    width: 50%;
+    margin-right: 37.5%;
+    margin-left: -87.5%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1602,12 +2065,12 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     _overflow-y: visible;
     font-size: 2.4rem;
   }
-  /* line 804, ../sass/commerce_responsive.scss */
+  /* line 993, ../sass/commerce_responsive.scss */
   .cart_container .order_total .sub_total_value {
     float: right;
-    width: 30%;
+    width: 37.5%;
     margin-right: 0%;
-    margin-left: -30%;
+    margin-left: -37.5%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1622,19 +2085,19 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     font-size: 2.4rem;
     color: #ee0000;
   }
-  /* line 813, ../sass/commerce_responsive.scss */
+  /* line 1002, ../sass/commerce_responsive.scss */
   .cart_container .cart_buttons_lower {
     margin-right: 0;
     padding-right: 0;
   }
 
-  /* line 818, ../sass/commerce_responsive.scss */
+  /* line 1007, ../sass/commerce_responsive.scss */
   .recommendedProductArea {
     clear: left;
     float: left;
-    width: 100%;
+    width: 125%;
     margin-left: 0%;
-    margin-right: -100%;
+    margin-right: -125%;
     padding-left: 4px;
     padding-right: 4px;
     -moz-box-sizing: border-box;
@@ -1646,12 +2109,12 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     _overflow: hidden;
     _overflow-y: visible;
   }
-  /* line 821, ../sass/commerce_responsive.scss */
+  /* line 1010, ../sass/commerce_responsive.scss */
   .recommendedProductArea .recommendedProduct {
     width: 20%;
     display: inline-block;
   }
-  /* line 824, ../sass/commerce_responsive.scss */
+  /* line 1013, ../sass/commerce_responsive.scss */
   .recommendedProductArea .recommendedProduct image {
     width: 100%;
   }
