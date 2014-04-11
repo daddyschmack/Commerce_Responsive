@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Order Review</title>
+    <link href="stylesheets/commerce_responsive.css" type="text/css" rel="stylesheet">
+    <meta name="viewport" content="width=100%, initial-scale=1">
+</head>
+<body>
+<div id="page_container" class="page_container">
+
+    <div id="order_information" class="order_info">
+        <div id="breadcrumb" class="breadcrumbs">
+            <div class="step1"><span>Shopping Cart</span></div>
+            <div class="step2"><span>Billing & Shipping</span></div>
+            <div class="step3 current"><span>Payment & Review</span></div>
+
+        </div>
+
+        <div class="chat_bar_fullWidth">Talk with a specialist via live chat</div>
+
+        <div class="espot_upper">Espot goes here</div>
+        <form id="userInfo" class="shipping_form">
+            <div id="shipping_information_area" class="section_holder_left">
+                <div class="section_title">1. Shipping Information</div>
+                <div class="espot_mini">
+                    <div class="e_text">FREE ground Shipping and Handling
+                        <a href="#" class="simpleLink">Click Here for Details</a>
+                    </div>
+                    <div class="shopRunner">
+                        Items in your cart qualify for FREE 2-Day shipping by ShopRunner
+                        <a class="simpleLink" href="">Learn More</a><a class="simpleLink" href="">Sign In</a>
+                    </div>
+                </div>
+
+                    <button class="multi_ship gray_gradient_button">Multiple Shipments</button>
+                    <div class="helper_text">Click Mulitiple Shipments if sending to multiple addresses</div>
+
+                <div id="shipping_address_area" class="customer_info_area_left">
+                    <div class="area_header">Shipping Addresses</div>
+                    <label for="ship_address_select">Shipping Address</label>
+                    <select id="ship_address_select" >
+                        <option value="" disabled selected>choose an address</option>
+                        <option value="address 1" >Address 1</option>
+                        <option value="address 2">Address 2</option>
+                    </select>
+                </div>
+                <div id="shipping_method_area" class="customer_info_area_right">
+                    <fieldset id="shipping_info">
+                        <div class="area_header">Shipping Method</div>
+                        <label class="shipping_label_radio" for="ship_Method_Fed_Ex_Ground">
+                        <input type="radio" class="" name="ship_method_radio" id="ship_Method_Fed_Ex_Ground" value="FedEx_Ground">
+                         FedEx Ground - $5.00
+                        </label>
+
+                        <label for="ship_Method_Fed_Ex_2day" class="shipping_label_radio">
+                         <input type="radio" class="" name="ship_method_radio" id="ship_Method_Fed_Ex_2day"
+                                   value="FedEx_2Day"> FedEx 2nd Day - $24.00
+                        </label>
+                        <label class="shipping_label_radio" for="ship_Method_Fed_Ex_Overnight">
+                        <input type="radio" class="" name="ship_method_radio" id="ship_Method_Fed_Ex_Overnight"
+                               value="FedEx_Overnight"> FedEx Overnight - $35.00
+                        </label>
+                        <label class="shipping_label_input" for="ship_complete_input">
+                        <input type="checkbox" class="" value="ship_complete" id="ship_complete_input"> Ship as Complete Order
+                        </label>
+                    </fieldset>
+                </div>
+                <div id="billing_information_area" class="section_holder_left">
+                    <div class="section_title">2. Billing Information</div>
+                    <div class="info_text"><span class="required_indicator">*</span>Required Field</div>
+
+                    <fieldset id="billing_address_info_1" class="billing_address order_fieldset ">
+                        <label id="billing_address_1_label" for="billing_address_1">Billing Address</label>
+                        <select class="user_info_select" name="user_billing_address_1" id="billing_address_1">
+                            <option class="address_option" value="">Select Address</option>
+                        </select>
+
+                        <div id="billing_info_1_firstName" class="billing_address_output">FirstName</div>
+                        <div id="billing_info_1_lastName" class="billing_address_output">LastName</div>
+                        <div id="billing_info_1_Address_Line1" class="billing_address_output">Address Line 1</div>
+                        <div id="billing_info_1_Address_Line2" class="billing_address_output">Suite / Apt</div>
+                        <div id="billing_info_1_city" class="billing_address_output">Some City</div>
+                        <div id="billing_info_1_email" class="billing_address_output">address@provider.com</div>
+
+                    </fieldset>
+                    <fieldset id="payment_method_info_1" class="payment_method order_fieldset">
+                        <label class="user_info_select payment_method_output" for="payment_method_1_select">Payment
+                            Method</label>
+                        <select id="payment_method_1_select" class="review_field_select">
+                            <option class="payment_option" value="MasterCard">MasterCard</option>
+                            <option class="payment_option" value="Citibank Visa">Citibank Visa</option>
+                        </select>
+                        <label class="review_field_label" for="payment_method_1_amt"><span
+                                class="required_indicator">*</span>Payment
+                            Amount</label>
+                        $<input id="payment_method_1_amt" class="review_field_number" placeholder="25.00"
+                                type="number"/>
+                        <input type="checkbox" class="review_field_checkbox" value="giftcard" id="gift_card">
+                        <label for="gift_card" class="review_field_label"> This is a gift card</label><br>
+                        <label for="cardNumber" class="review_field_label"><span class="required_indicator">*</span>Card
+                            Number </label><br>
+                        <input type="number" class="review_field_input_number" id="cardNumber" value=""><br>
+                        <label for="card_Name" class="review_field_label"><span class="impact_text small">*</span>Card
+                            Nickname (ex.1st Bank Visa) </label><br>
+                        <input type="text" class="review_field_input_text" id="card_Name" value=""><br>
+                        <span class="review_field_label"><span
+                                class="required_indicator">*</span> Expiration Date</span><br>
+                        <select id="card_expire_Month" class="review_field_select">
+                            <option value="" disabled selected>Expiration Month</option>
+                            <option value="01">Jan</option>
+                            <option value="02">Feb</option>
+                            <option value="03">Mar</option>
+                            <option value="04">Apr</option>
+                            <option value="05">May</option>
+                            <option value="06">Jun</option>
+                            <option value="07">Jul</option>
+                            <option value="08">Aug</option>
+                            <option value="09">Sep</option>
+                            <option value="10">Oct</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Dec</option>
+                        </select>
+                        <select id="card_expire_year" class="review_field_select">
+                            <option value="" disabled selected>Exp. Year</option>
+                            <option value="2014">2014</option>
+                            <option value="2015">2015</option>
+                            <option value="2018">2016</option>
+                            <option value="2017">2017</option>
+                        </select><br>
+                        <span class="required_indicator">*</span> <label for="card_cv2"
+                                                                         class="review_field_label">CV2# </label>
+                        <label class="review_field_label"><a href="#" class="smallLink">What is a CV2?</a> </label>
+                        <br>
+                        <input type="text" id="card_cv2" class="review_field_input_text" value="" size="3">
+                        <br>
+
+                        <div id="payment_amt_section">
+                            <br>
+
+                            <div class="">Payment Amount</div>
+
+                            <input class="review_field_radio" type="radio" name="payment_balance"
+                                   id="full_amt" value="fullBalance">
+                       <span class="review_field_checkbox primary_text default">
+                            <label for="full_amt">
+                                Order Balance - $1519.79
+                            </label>
+                        </span>
+                            <br>
+
+                            <input class="review_field_radio" type="radio" name="payment_balance"
+                                   id="partial_amt_indicator" value="partialBalance">
+                       <span class="review_field_radio">
+                            <label for="partial_amt_1">
+                                Other Amount - <input type="text" id="partial_amt_1" class="primary_text default"
+                                                      value="" size="5">
+                            </label>
+                       </span>
+                            <br>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </form>
+        <!-- end id="userInfo" class="shipping_form"-->
+        <div id="order_items_area" class="section_holder_right">
+            <div class="section_title">Your Order</div>
+            <div id="review_cart" class="review_cart">
+                <div id="product_review_1" class="review_product_row">
+                    <div class="item_image">
+                        <img src="images/EF-8-15-Fisheye-USM_1_l.jpg" alt="Fish Eye Lens">
+                    </div>
+                    <div class="item_details">
+                        <div class="product_name">EF8-15mm f/4L Fisheye USM</div>
+                        <div class="sku">SKU: 4423884922AA</div>
+                        <div class="qty">QTY:1</div>
+                        <div class="availability">In Stock</div>
+                    </div>
+                    <div class="price">
+                        You Pay: $1,499.00
+                    </div>
+
+                </div>
+                <div id="product_review_2" class="review_product_row">
+                    <div class="item_image">
+                        <img src="images/EF-8-15-Fisheye-USM_1_l.jpg" alt="Fish Eye Lens">
+                    </div>
+                    <div class="item_details">
+                        <div class="product_name">Canon EOS Lens Wrap</div>
+                        <div class="sku">SKU: 442322AA</div>
+                        <div class="qty">QTY:1</div>
+                        <div class="availability">In Stock</div>
+                    </div>
+                    <div class="price">
+                        Free
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="promoForm" id="promoArea">
+                <form action="#" name="promoForm">
+                    <input type="text" placeholder="Enter Promo Code" class="promo_input"/>
+                    <button class="apply_button gray_gradient_button" type="submit" class="applyButton"
+                            onclick="ajax_ApplyPromoCode">Apply
+                    </button>
+
+                </form>
+            </div>
+            <div class="order_total">
+                <div class="table_order_total">
+                    <div class="merchandise_label">Merchandise:</div>
+                    <div class="merchandise_value">$115,504.75</div>
+                    <div class="discount_label">Discount:</div>
+                    <div class="discount_value">-$05.04</div>
+                    <div class="shipping_label">FedEx Ground Shipping</div>
+                    <div class="shipping_value">$5.00</div>
+                    <div class="sales_tax_label">Sales Tax:</div>
+                    <div class="sales_tax_value">$5.00</div>
+                    <div class="total_value_label">Total Order:</div>
+                    <div class="total_order_value">$115,509.00</div>
+                    <div class="payment_applied_label">Payment Applied</div>
+                    <div class="payment_applied_value">$0.00</div>
+                    <div class="remaining_balance_label">Remaining Balance</div>
+                    <div class="remaining_balance_value">$115,519.00</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--end order information-->
+</div>
+<!-- end of page container -->
+</body>
+</html>
