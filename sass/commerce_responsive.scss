@@ -1,7 +1,7 @@
 @import "compass";
 @import "compass/css3";
 @import "zen";
-@import "zen/background";
+//@import "zen/background";
 
 
 //Create the page level variables here
@@ -17,7 +17,7 @@ $impact_color: #ee0000;
 //$field-width:;
 //$file-height:;
 
-.baseFontAwesome{
+%baseFontAwesome{
   font-family: FontAwesome;
   display: inline-block;
   font-style: normal;
@@ -48,7 +48,7 @@ $impact_color: #ee0000;
 }
 
 @mixin f_awe($faCode:"", $iconSize:1rem,$color:inherit){
-  @extend .baseFontAwesome;
+  @extend %baseFontAwesome;
   $content : "you didn't pass a font awesome code";
     //Use like this-- :before(@include f_awe(/"fo6b")
   //If you want to apply it to a class that you will later add content to, just leave the
@@ -72,9 +72,10 @@ $impact_color: #ee0000;
   &::-moz-placeholder { @content; }
   &:-ms-input-placeholder { @content; }
   &::-webkit-input-placeholder { @content; }
+  padding-left: 3%;
 }
 
-.baseChatBar{
+%baseChatBar{
   font-weight: bold;
   text-align: right;
   &:after{
@@ -131,22 +132,32 @@ H1,h1{
   font-size: 2.6rem;
   border-bottom: 1px $secondary_color;
 }
+/*
 @mixin area_header{
   font-size: 1.6rem ;
   border-bottom: 1px $secondary_color;
 }
+*/
 
 .mobile_inline_block,.mobile_block{
   display:none;
 }
+.smallLink{
+  font-size:10px;
+  font-size: 1rem;
+  color:#000;
+  margin:0 2%;
 
+}
 .area_header{
   //@include zen-clear(both);
   // @include zen-grid-item(4,1);
   font-size:2rem;
   display:block;
   margin-top:1%;
-  border-bottom: 1px solid $subtle_color;
+  //border-bottom: 1px solid $subtle_color;
+  margin-bottom: 4%;
+  font-weight:bold;
 
 }
 
@@ -329,7 +340,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     @include zen-grid-item(4,1);
   }
   .chatBar_espot {
-    @extend .baseChatBar;
+    @extend %baseChatBar;
     @include zen-grid-item(3, 1, right);
   }
 
@@ -498,7 +509,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   width:98%;
   input {
     @include input-placeholder {
-      color:#ffffff;
+      color:$secondary_color;
     }
   }
   .promo_input{
@@ -601,13 +612,21 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   .chat_bar_fullWidth {
     @include zen-clear();
     @include zen-grid-item(8, 1);
-    @extend .baseChatBar;
-    background-color: lightcyan;
+    @extend %baseChatBar;
+    height:40px;
+    height:6rem;
+    line-height: 40px;
+    line-height: 6rem;
+
   }
   .espot_upper {
     @include zen-clear(both);
     @include zen-grid-item(8, 1);
     background-color: lightgray;
+    height:40px;
+    height:6rem;
+    line-height: 40px;
+    line-height: 6rem;
 
   }
 
@@ -630,34 +649,57 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     width: 100%;
     font-size: 20px;
     font-size: 2rem;
-    border-bottom:1px solid $subtle_color;
+    border-bottom:1px solid $secondary_color;
     padding-bottom:2%;
+    margin-top:8%;
+    margin-bottom:2%;
   }
   .espot_mini {
-    background-color: lightcyan;
+
     .e_text {
       @include zen-clear();
       @include zen-grid-item(8, 1);
       float: none;
+      font-size: 1.4rem;
+      padding: 2% 0;
+
     }
     .shopRunner {
       @include zen-clear();
-      @include zen-grid-item(5, 1);
+      @include zen-grid-item(7, 1);
       float: none;
+      padding:2% 0;
+      padding-right: 3%;
     }
   }
-  .multi_ship {
-    @include zen-grid-item(3, 1);
+  .multi_ship_holder {
+    @include zen-grid-item(4, 1);
+    height:100%;
     margin-bottom: 2%;
+
+    .multi_ship{
+      color:#ffffff;
+      font-size: 1.2rem;
+      padding: 3% 6%;
+      line-height: 1.6rem;
+    }
   }
   .helper_text {
     @include zen-grid-item(5, 4);
-    font-size: 1.6rem;
     margin-bottom: 2%;
+    font-size: 1.3rem;
+    line-height:1.6rem;
+    padding:1%;
+    padding-right: 3%;
   }
   .customer_info_area_left {
     @include zen-clear(left);
     @include zen-grid-item(4, 1);
+    label{
+      display:block;
+    }
+
+
 
     /*
      label{
@@ -673,6 +715,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     //  @include zen-clear(right);
     fieldset {
       border: none;
+      padding:0;
     }
     @include zen-grid-item(4, 5);
     .shipping_label_input, .shipping_label_radio {
@@ -690,44 +733,116 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     @include zen-clear(right);
     @include zen-grid-item(8, 9);
   }
+  #billing_information_area{
+    @include zen-clear(left);
+    @include zen-grid-item(8,1);
+    .billing_address{
+      @include zen-clear(left);
+      @include zen-grid-item(4,1);
+      label{
+        display:block;
+        padding-bottom: 1%;
+      }
+      .billing_address_output{
+        margin-bottom: 2%;
+      }
+    }
+    .payment_method{
+      @include zen-grid-item(4,5);
+      #payment_method_1_select{
+        display: block;
+      }
+      .user_info_select, input{
+        display: block;
+      }
+      select.review_field_select, .review_field_radio{
+        display:inline;
+      }
+
+    }
+  }
 
   .section_holder_right{
     .review_cart{
+        font-size:1.6rem;
       .review_product_row{
         @include zen-clear();
+        height: 11rem;
+        margin:3% 0;
+        border-bottom: 1px solid $secondary-color;
         .item_image{
           @include zen-grid-item(2,1);
           display:inline-block;
           //width:30%;
+          margin-bottom:2%;
           img{
             width:100%;
+            padding:3%;
+            border:1px solid $secondary_color;
           }
         }
         .item_details{
           @include zen-grid-item(3,3);
+          padding-left:3%;
+          line-height: 2rem;
+          .product_name{
+            color:$impact_color;
+          }
         }
         .price{
-          @include zen-grid-item(2,7)
+          @include zen-grid-item(2,7);
+          padding-right:2%;
         }
       }
     }
     .promoForm{
      // @include zen-clear();
+      .promo_input{
+        width: 60%;
+      }
     }
     .order_total{
       @include zen-clear();
+      font-size:16px;
+      font-size:1.6rem;
+      line-height: 25px;
+      line-height: 2.5rem;
+      margin-right:2%;
 
       div[class$="_label"]{
         @include zen-clear(both);
-        @include zen-grid-item(4,3);
+        @include zen-grid-item(3,4);
+
       }
       div[class$="_value"]{
-
+        text-align:right;
         @include zen-grid-item(2,7);
         //text-align: right;
       }
-
+      .remaining_balance_label,.remaining_balance_value{
+        font-size: 20px;
+        font-size: 2.0rem;
+        font-weight: bold;
+      }
+      .remaining_balance_value{
+        color:$impact_color;
+      }
     }
+
+  }
+  .button_holder_bottom{
+    @include zen-clear();
+    @include zen-grid-item(5,1,right);
+    text-align:right;
+    margin-right:2%;
+    button{
+      @extend .shoppingActions;
+      color: #ffffff;
+      padding-left: 12%;
+      padding-right: 12%;
+      margin-top:12%;
+    }
+
 
   }
 }
@@ -1014,8 +1129,16 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
         width:100%;
       }
     }
-
-
+  }
+  .order_info {
+    background-color: lightblue;
+    .section_holder_left, .section_holder_right{
+      @include zen-clear();
+      @include zen-grid-item(8,1);
+    }
+    /*.billing_address{
+      @include zen-grid-item(8,1);
+    }*/
   }
 }
 
